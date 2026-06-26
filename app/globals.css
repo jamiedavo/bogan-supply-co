@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  The same design tokens also live in tailwind.config.js (the source of truth
+  for utility classes like bg-bitumen, text-bone, etc). They're mirrored here
+  as raw CSS variables too, in case any future component needs var(--x)
+  directly instead of a Tailwind class.
+*/
+:root {
+  --bitumen: #0e0e0c;
+  --bone: #f2ecdf;
+  --bone-deep: #e7dfcc;
+  --singlet: #faf8f2;
+  --red: #b5392c;
+  --red-dark: #7a2419;
+  --steel: #8c8a80;
+  --ink: #15140f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
