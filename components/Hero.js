@@ -36,7 +36,7 @@ export default function Hero() {
           href="#manifesto"
           className="text-[13px] tracking-[0.05em] uppercase border-b border-steel pb-1 transition-colors hover:border-bone hover:text-bone"
         >
-          Read the manifesto &rarr;
+          Enquire with Jamie Davidson
         </a>
       </div>
     </section>
