@@ -1,68 +1,30 @@
-# Bogan Supply Co. — Next.js + Tailwind
+# Bogan.co.nz — Bogan Supply Co.
 
-Refactor of the static `bogan-supply-co-mockup.html` into a modular Next.js
-14 (App Router) + Tailwind CSS app, expanded to a 30-item catalog across
-three categories.
+A responsive clothing storefront based on the original Bogan Supply Co. project. Includes a homepage, men's/women's/kids' collections, style filters, colour previews, size selection and a persistent sample bag.
 
-## Run it
+## Run and build
 
-```bash
-npm install
-npm run dev
-```
+- npm ci
+- npm run dev
+- npm run build
 
-Then open http://localhost:3000.
+The production build exports static HTML, CSS and JavaScript to out/. Webpack is selected because the Turbopack CSS worker fails on this Windows environment. Deploy the contents of out/ with directory indexes enabled.
 
-`npm run build` produces a production build (verified locally — builds
-clean, all routes pre-render).
+## Brand direction
 
-## Structure
+Black, cream and red, large Anton wordmark and Archivo body text. Copy draws on the supplied Bogan.co.nz brand discussion: Nice things for rough units; Different culture. Same pride.
 
-```
-app/
-  layout.js                  Root layout — fonts, CartProvider, Nav, CartDrawer
-  globals.css                Tailwind directives + raw CSS var mirror
-  page.js                    Homepage — Hero, 6 featured items, manifesto
-  collections/
-    page.js                  "View All Gear" destination — all 30 items, grouped
-    [category]/page.js       Dynamic per-category page (petrolheads / rock-dogs / sheilas)
-components/
-  Nav.js                     Scroll-aware nav, Shop dropdown, mobile menu
-  Hero.js                    Giant "BOGAN" headline
-  Marquee.js                 Scrolling ticker
-  ProductGrid.js / ProductCard.js   Catalog grid + individual card
-  CartDrawer.js              Slide-out cart panel
-  Footer.js
-context/
-  CartContext.js             Cart state, localStorage persistence, qty logic
-data/
-  products.js                30 mock products + category taxonomy
-```
+## Current launch state
 
-## Notes & assumptions
+This is a store preview. All six product listings, prices, available sizes and SVG garment designs are concepts. No real stock, payment provider, shipping service or customer signup is connected. The bag is stored only in the visitor's browser. No customer information is collected.
 
-- **Design tokens**: `--bitumen`, `--bone`, `--bone-deep`, `--singlet`,
-  `--red`/`--red-dark`, `--steel`, `--ink` are mapped in `tailwind.config.js`
-  as the source of truth for utility classes (`bg-bitumen`, `text-bone`,
-  etc.), and mirrored as raw CSS variables in `globals.css` in case a future
-  component needs `var(--x)` directly.
-- **Hero**: the `<h1>` is now just `BOGAN`, styled with
-  `font-display uppercase leading-[0.85] tracking-[-0.02em]
-  text-[clamp(70px,18vw,240px)]` — matches the spec exactly.
-- **"View All Gear →"**: the brief didn't specify a destination for this
-  link, so it routes to a new `/collections` overview page that lists all
-  30 products grouped by category (each group also links through to its
-  dedicated `/collections/[category]` page). This was the most natural way
-  to give the link real estate to go to.
-- **Fonts**: kept as direct Google Fonts `<link>` tags (matching the
-  original mockup) rather than switching to `next/font`. `next/font` would
-  self-host and avoid a render-blocking request — worth doing if this goes
-  to production.
-- **Cart persistence**: cart state lives in `CartContext`, synced to
-  `localStorage` under the key `bogan-cart`. Adding a product already in
-  the cart increments its `qty` rather than creating a duplicate line; the
-  drawer has +/− steppers and a remove action.
-- **Scroll reveal**: each `ProductCard` re-implements the original's
-  `IntersectionObserver` fade/slide-in, respecting `prefers-reduced-motion`.
-- **Featured items**: 6 products (2 per category) are flagged
-  `featured: true` in `data/products.js` and power the homepage grid.
+Before opening orders, supply approved product photography/artwork, confirmed prices and variants, garment measurements, contact details, fulfilment and returns information. Choose a commerce/payment provider and connect authoritative stock, checkout and order handling. Set up the domain with the chosen host; no DNS changes have been made.
+
+## Source and hosting
+
+Original repository: https://github.com/jamiedavo/bogan-supply-co
+Private preview hosting identity is recorded in .openai/hosting.json. Preserve that identity when updating the preview.
+
+## Verification
+
+Production static export passes. Browser checks cover size validation, separate colour/size bag lines, quantity totals, persistence after refresh, collection/style filtering and phone menu navigation. Dependencies were upgraded from the original Next.js 14/React 18 base; the installation audit reported zero known vulnerabilities.

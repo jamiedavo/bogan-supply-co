@@ -4,8 +4,8 @@ import Nav from "@/components/Nav";
 import CartDrawer from "@/components/CartDrawer";
 
 export const metadata = {
-  title: "Bogan Supply Co.",
-  description: "Heavyweight cotton apparel for ute life, garage culture and self-aware Kiwi pride.",
+  title: "Bogan Supply Co. | Nice things for rough units",
+  description: "Meet Bogan.co.nz. Aotearoa streetwear: T-shirts and hoodies for men, women, and little legends. Explore the first range.",
 };
 
 export default function RootLayout({ children }) {
