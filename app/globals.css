@@ -26,3 +26,61 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
 }
+
+@layer components {
+  .page-shell {
+    @apply px-5 sm:px-8 pt-[140px] pb-20 max-w-[1280px] mx-auto;
+  }
+  .page-title {
+    @apply font-display uppercase leading-[1.05] text-[clamp(36px,6vw,72px)] mb-6;
+  }
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.16em] text-ink/60 mb-5;
+  }
+  .field-label {
+    @apply block text-[11px] font-mono uppercase tracking-wider;
+  }
+  .field {
+    @apply block mt-2 w-full bg-transparent border border-ink/30 px-3 py-3 text-sm font-sans normal-case tracking-normal text-ink rounded-none;
+  }
+  .filter-pill {
+    @apply inline-flex justify-center items-center border border-ink/30 px-4 py-3 text-xs uppercase tracking-wider hover:border-ink;
+  }
+  .filter-pill.active {
+    @apply bg-ink text-singlet border-ink;
+  }
+  .button-primary {
+    @apply bg-red text-singlet px-6 py-4 text-xs uppercase tracking-wider font-semibold hover:bg-red-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .quantity-button {
+    @apply border border-ink/30 w-11 h-11 disabled:opacity-30;
+  }
+  .help-section {
+    @apply scroll-mt-28 border-t border-ink/20 py-8;
+  }
+  .help-section h2 {
+    @apply font-display text-2xl uppercase mb-4;
+  }
+  .help-section p {
+    @apply text-sm leading-relaxed text-ink/75;
+  }
+}
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+::selection {
+  background: var(--red);
+  color: var(--singlet);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

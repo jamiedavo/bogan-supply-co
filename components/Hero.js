@@ -10,19 +10,20 @@ export default function Hero() {
 
       <p className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.18em] text-bone-deep mb-6">
         <span className="inline-block w-[18px] h-[2px] bg-red" />
-        Workshop drop 001
+        Aotearoa / First drop
       </p>
 
       {/* The giant centerpiece headline — single word, massive display scale */}
       <h1 className="flex flex-col items-start font-display uppercase text-bone leading-[0.8] tracking-[-0.02em] text-[clamp(70px,18vw,240px)]">
-  BOGAN
-  <span className="font-mono text-[clamp(14px,2.5vw,26px)] tracking-[0.18em] uppercase text-red mt-4 font-medium">
-    Supply Co.
-  </span>
-</h1>
+        BOGAN
+        <span className="font-mono text-[clamp(14px,2.5vw,26px)] tracking-[0.18em] uppercase text-red mt-4 font-medium">
+          Supply Co.
+        </span>
+      </h1>
 
       <p className="max-w-[480px] text-base leading-[1.6] text-bone-deep mt-6 mb-10">
-        Hardwearing kit for legends that don't do delicate washes.
+        T-shirts and hoodies for Kiwi legends. Big ones. Little ones. The whole
+        crew.
       </p>
 
       <div className="flex items-center gap-7 flex-wrap">
