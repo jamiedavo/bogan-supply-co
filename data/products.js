@@ -1,6 +1,6 @@
 // Category taxonomy. `slug` is the URL segment used by /collections/[category].
 export const categories = [
-  { slug: "petrolheads", name: "Fullas" },
+  { slug: "petrolheads", name: "Blokes" },
   { slug: "rock-dogs", name: "Chicks" },
   { slug: "sheilas", name: "Rug rats" },
 ];
@@ -8,7 +8,7 @@ export const categories = [
 // 30 mock products — 10 per category. `featured: true` marks the 6 items
 // (2 per category) curated for the homepage grid.
 export const products = [
-  // ---------- Fullas ----------
+  // ---------- Blokes ----------
   {
     id: 1,
     name: "Stubbies tee",
