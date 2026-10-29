@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-bitumen text-bone px-8 pt-[140px] pb-20"
+      className="relative min-h-0 flex flex-col justify-start overflow-hidden bg-bitumen text-bone px-8 pt-[158px] pb-12 md:min-h-screen md:justify-center md:pt-[140px] md:pb-20"
     >
       <div className="absolute -right-[10%] -bottom-[20%] w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full border border-bone/[0.06]" />
 
