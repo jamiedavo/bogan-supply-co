@@ -22,15 +22,15 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 border-b transition-[background-color,padding,border-color] duration-300 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-8 border-b transition-[background-color,padding,border-color] duration-300 ease-out ${
         scrolled
           ? "bg-singlet/95 border-ink/[0.08] py-3"
-          : "bg-transparent border-transparent py-[18px]"
+          : "bg-transparent border-transparent py-6 md:py-[18px]"
       }`}
     >
-      <Link href="/" className={`font-display text-lg leading-none tracking-[0.03em] transition-colors duration-300 ${linkColor}`}>
+      <Link href="/" className={`font-display text-[30px] md:text-lg leading-[0.85] tracking-[0.03em] transition-colors duration-300 ${linkColor}`}>
         BOGAN
-        <span className="block font-mono text-[9px] leading-none tracking-[0.2em] font-normal uppercase">
+        <span className="block font-mono text-[10px] md:text-[9px] leading-none tracking-[0.2em] font-normal uppercase text-red md:text-current mt-1 md:mt-0">
           Supply Co.
         </span>
       </Link>
@@ -84,34 +84,42 @@ export default function Nav() {
       </div>
 
       {/* Mobile toggle */}
-      <div className="md:hidden flex items-center gap-4">
+      <div className="md:hidden flex items-center gap-6">
         <button
-          className={`transition-colors duration-300 ${linkColor}`}
+          className={`flex items-center justify-center transition-colors duration-300 ${linkColor}`}
           onClick={openCart}
           aria-label="Open cart"
         >
           <svg
             aria-hidden="true"
-            viewBox="0 0 24 24"
-            className="h-[21px] w-[21px]"
+            viewBox="0 0 32 32"
+            className="h-8 w-8"
             fill="none"
             stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.8"
           >
-            <path d="M4 5h2l2.2 10.2a2 2 0 0 0 2 1.6h7.3a2 2 0 0 0 1.9-1.4L21 8H7" />
-            <circle cx="10" cy="20" r="1" />
-            <circle cx="18" cy="20" r="1" />
+            <path d="M9 12V9a7 7 0 0 1 14 0v3" />
+            <path d="M6 11h20l-1 16H7L6 11Z" />
           </svg>
           <span className="sr-only">Cart ({totalCount})</span>
         </button>
         <button
-          className={`text-[22px] transition-colors duration-300 ${linkColor}`}
+          className={`flex items-center justify-center transition-colors duration-300 ${linkColor}`}
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
         >
-          &#9776;
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 32 32"
+            className="h-8 w-8"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M3 7h26M3 16h26M3 25h26" />
+          </svg>
         </button>
       </div>
 
