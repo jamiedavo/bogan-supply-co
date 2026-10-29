@@ -28,9 +28,9 @@ export default function Nav() {
           : "bg-transparent border-transparent py-[18px]"
       }`}
     >
-      <Link href="/" className={`font-display text-lg tracking-[0.03em] transition-colors duration-300 ${linkColor}`}>
+      <Link href="/" className={`font-display text-lg leading-none tracking-[0.03em] transition-colors duration-300 ${linkColor}`}>
         BOGAN
-        <span className="block font-mono text-[9px] tracking-[0.2em] font-normal uppercase mt-0.5">
+        <span className="block font-mono text-[9px] leading-none tracking-[0.2em] font-normal uppercase">
           Supply Co.
         </span>
       </Link>
@@ -84,13 +84,36 @@ export default function Nav() {
       </div>
 
       {/* Mobile toggle */}
-      <button
-        className={`md:hidden text-[22px] transition-colors duration-300 ${linkColor}`}
-        onClick={() => setMobileOpen((v) => !v)}
-        aria-label="Toggle menu"
-      >
-        &#9776;
-      </button>
+      <div className="md:hidden flex items-center gap-4">
+        <button
+          className={`transition-colors duration-300 ${linkColor}`}
+          onClick={openCart}
+          aria-label="Open cart"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-[21px] w-[21px]"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.8"
+          >
+            <path d="M4 5h2l2.2 10.2a2 2 0 0 0 2 1.6h7.3a2 2 0 0 0 1.9-1.4L21 8H7" />
+            <circle cx="10" cy="20" r="1" />
+            <circle cx="18" cy="20" r="1" />
+          </svg>
+          <span className="sr-only">Cart ({totalCount})</span>
+        </button>
+        <button
+          className={`text-[22px] transition-colors duration-300 ${linkColor}`}
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          &#9776;
+        </button>
+      </div>
 
       {/* Mobile menu */}
       {mobileOpen && (

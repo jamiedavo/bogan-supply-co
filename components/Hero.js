@@ -39,11 +39,11 @@ export default function Hero() {
           href="#shop"
           className="bg-red text-singlet px-[30px] py-[15px] text-[13px] tracking-[0.08em] uppercase font-semibold transition-colors hover:bg-red-dark"
         >
-          The Gear
+          Shop the Gear
         </a>
         <a
           href="#manifesto"
-          className="text-[13px] tracking-[0.05em] uppercase border-b border-steel pb-1 transition-colors hover:border-bone hover:text-bone"
+          className="text-[12px] tracking-[0.05em] uppercase border-b border-steel pb-1 transition-colors hover:border-bone hover:text-bone"
         >
           The Manifesto
         </a>
