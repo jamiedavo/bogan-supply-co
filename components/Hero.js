@@ -23,7 +23,7 @@ export default function Hero() {
       </svg>
 
       {/* The giant centerpiece headline — single word, massive display scale */}
-      <h1 className="flex flex-col items-start font-display uppercase text-bone leading-[0.8] tracking-[-0.02em] text-[clamp(70px,18vw,280px)]">
+      <h1 className="flex flex-col items-start font-display uppercase text-bone leading-[0.8] tracking-[-0.02em] text-[clamp(87.5px,22.5vw,350px)]">
   BOGAN
   <span className="font-mono text-[clamp(14px,2.5vw,26px)] tracking-[0.18em] uppercase text-red mt-4 font-medium">
     Supply Co.
