@@ -43,6 +43,7 @@ export const products = [
     category: "petrolheads",
     sku: "No. 031",
     placeholderWord: "CAP",
+    image: "/oil-on-cotton.png",
     photoNote: "photo tbc",
     description: "Five-panel. Zero warrant of fitness.",
   },
