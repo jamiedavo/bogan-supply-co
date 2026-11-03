@@ -52,9 +52,17 @@ export default function ProductCard({ product, index }) {
           altBg ? "bg-bone-deep" : "bg-bone"
         }`}
       >
-        <span className="font-display text-[15vw] md:text-[4.2vw] text-ink/[0.07] select-none">
-          {product.placeholderWord}
-        </span>
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span className="font-display text-[15vw] md:text-[4.2vw] text-ink/[0.07] select-none">
+            {product.placeholderWord}
+          </span>
+        )}
         <span className="absolute top-3.5 right-3.5 flex flex-col items-end gap-0.5 bg-red text-singlet px-2.5 py-[7px] rotate-3 shadow-[0_1px_0_rgba(0,0,0,0.15)]">
           <span className="font-mono text-[10px] tracking-[0.06em] opacity-85">
             {product.sku}
