@@ -25,18 +25,21 @@ export default function Nav() {
 
   return (
     <nav
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-8 border-b transition-[background-color,padding,border-color] duration-300 ease-out ${
+        scrolled
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 border-b transition-[background-color,padding,border-color] duration-300 ease-out ${
         solid
           ? "bg-singlet/95 border-ink/[0.08] py-3"
-          : "bg-transparent border-transparent py-[18px]"
+          : "bg-transparent border-transparent py-6 md:py-[18px]"
       }`}
     >
+      <Link href="/" className={`font-display text-[30px] md:text-lg leading-[0.85] tracking-[0.03em] transition-colors duration-300 ${linkColor}`}>
       <Link
         href="/"
         className={`font-display text-lg tracking-[0.03em] transition-colors duration-300 ${linkColor}`}
       >
         BOGAN
-        <span className="block font-mono text-[9px] tracking-[0.2em] font-normal uppercase mt-0.5">
+        <span className="block font-mono text-[10px] md:text-[9px] leading-none tracking-[0.2em] font-normal uppercase text-red md:text-current mt-1 md:mt-0">
           Supply Co.
         </span>
       </Link>
@@ -101,6 +104,44 @@ export default function Nav() {
       </div>
 
       {/* Mobile toggle */}
+      <div className="md:hidden flex items-center gap-6">
+        <button
+          className={`flex items-center justify-center transition-colors duration-300 ${linkColor}`}
+          onClick={openCart}
+          aria-label="Open cart"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 32 32"
+            className="h-8 w-8"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.8"
+          >
+            <path d="M9 12V9a7 7 0 0 1 14 0v3" />
+            <path d="M6 11h20l-1 16H7L6 11Z" />
+          </svg>
+          <span className="sr-only">Cart ({totalCount})</span>
+        </button>
+        <button
+          className={`flex items-center justify-center transition-colors duration-300 ${linkColor}`}
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 32 32"
+            className="h-8 w-8"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M3 7h26M3 16h26M3 25h26" />
+          </svg>
+        </button>
+      </div>
       <button
         className={`md:hidden text-[22px] transition-colors duration-300 ${linkColor}`}
         onClick={() => setMobileOpen((v) => !v)}
