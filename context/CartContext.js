@@ -1,91 +1,83 @@
 "use client";
-
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
-
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { makeLine, restoreCart, MAX_QUANTITY } from "@/lib/cart.mjs";
 const CartContext = createContext(undefined);
-const STORAGE_KEY = "bogan-cart";
-
+const STORAGE_KEY = "bogan-cart-v2";
 export function CartProvider({ children }) {
-  // cart is an array of { slug, name, price, qty }
   const [cart, setCart] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [hydrated, setHydrated] = useState(false);
-
-  // Load any persisted cart on first mount (client-only — localStorage
-  // doesn't exist during server rendering).
   useEffect(() => {
     try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) setCart(JSON.parse(raw));
+      setCart(
+        restoreCart(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]")),
+      );
     } catch {
-      // Corrupt or inaccessible storage — start with an empty cart.
+      /* Empty cart if storage is unavailable. */
     }
     setHydrated(true);
   }, []);
-
-  // Persist on every change, once the initial load has happened (so we
-  // don't immediately overwrite saved data with the empty initial state).
   useEffect(() => {
-    if (!hydrated) return;
-    try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-    } catch {
-      // Storage full or unavailable — fail silently, cart still works in-memory.
+    if (hydrated) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+      } catch {
+        /* In-memory cart still works. */
+      }
     }
   }, [cart, hydrated]);
-
-  const addToCart = useCallback((product) => {
-    setCart((prev) => {
-      const existing = prev.find((item) => item.slug === product.slug);
-      if (existing) {
-        // Already in the cart — bump quantity instead of adding a duplicate line.
-        return prev.map((item) =>
-          item.slug === product.slug ? { ...item, qty: item.qty + 1 } : item
-        );
-      }
-      return [
-        ...prev,
-        { slug: product.slug, name: product.name, price: product.price, qty: 1 },
-      ];
-    });
+  const addToCart = useCallback((product, size, colour, qty = 1) => {
+    const line = makeLine(product.slug, size, colour, qty);
+    if (!line) return false;
+    setCart((prev) => restoreCart([...prev, line]));
+    setIsOpen(true);
+    return true;
   }, []);
-
-  const updateQty = useCallback((slug, qty) => {
-    setCart((prev) => {
-      if (qty <= 0) return prev.filter((item) => item.slug !== slug);
-      return prev.map((item) => (item.slug === slug ? { ...item, qty } : item));
-    });
+  const updateQty = useCallback((key, qty) => {
+    if (!Number.isInteger(qty)) return;
+    setCart((prev) =>
+      qty <= 0
+        ? prev.filter((item) => item.key !== key)
+        : prev.map((item) =>
+            item.key === key
+              ? { ...item, qty: Math.min(qty, MAX_QUANTITY) }
+              : item,
+          ),
+    );
   }, []);
-
-  const removeFromCart = useCallback((slug) => {
-    setCart((prev) => prev.filter((item) => item.slug !== slug));
-  }, []);
-
+  const removeFromCart = useCallback(
+    (key) => setCart((prev) => prev.filter((item) => item.key !== key)),
+    [],
+  );
   const openCart = useCallback(() => setIsOpen(true), []);
   const closeCart = useCallback(() => setIsOpen(false), []);
-
-  const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-  const totalPrice = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
-
-  const value = {
-    cart,
-    addToCart,
-    updateQty,
-    removeFromCart,
-    isOpen,
-    openCart,
-    closeCart,
-    totalCount,
-    totalPrice,
-  };
-
-  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider
+      value={{
+        cart,
+        hydrated,
+        isOpen,
+        addToCart,
+        updateQty,
+        removeFromCart,
+        openCart,
+        closeCart,
+        totalCount: cart.reduce((s, i) => s + i.qty, 0),
+        totalPrice: cart.reduce((s, i) => s + i.qty * i.price, 0),
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 }
-
 export function useCart() {
   const ctx = useContext(CartContext);
-  if (!ctx) {
-    throw new Error("useCart must be used within a CartProvider");
-  }
+  if (!ctx) throw new Error("CartProvider is required");
   return ctx;
 }

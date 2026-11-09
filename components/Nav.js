@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { categories } from "@/data/products";
@@ -18,17 +19,25 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const linkColor = scrolled ? "text-ink" : "text-bone";
+  const pathname = usePathname();
+  const solid = scrolled || pathname !== "/";
+  const linkColor = solid ? "text-ink" : "text-bone";
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-8 border-b transition-[background-color,padding,border-color] duration-300 ease-out ${
         scrolled
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 border-b transition-[background-color,padding,border-color] duration-300 ease-out ${
+        solid
           ? "bg-singlet/95 border-ink/[0.08] py-3"
           : "bg-transparent border-transparent py-6 md:py-[18px]"
       }`}
     >
       <Link href="/" className={`font-display text-[30px] md:text-lg leading-[0.85] tracking-[0.03em] transition-colors duration-300 ${linkColor}`}>
+      <Link
+        href="/"
+        className={`font-display text-lg tracking-[0.03em] transition-colors duration-300 ${linkColor}`}
+      >
         BOGAN
         <span className="block font-mono text-[10px] md:text-[9px] leading-none tracking-[0.2em] font-normal uppercase text-red md:text-current mt-1 md:mt-0">
           Supply Co.
@@ -39,10 +48,13 @@ export default function Nav() {
       <div className="hidden md:flex items-center gap-7">
         <div
           className="relative"
-          onMouseEnter={() => setShopOpen(true)}
-          onMouseLeave={() => setShopOpen(false)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setShopOpen(false);
+          }}
         >
           <button
+            onClick={() => setShopOpen((v) => !v)}
+            aria-expanded={shopOpen}
             className={`text-[13px] tracking-[0.05em] uppercase transition-colors duration-300 hover:text-red ${linkColor}`}
           >
             Shop
@@ -50,10 +62,18 @@ export default function Nav() {
           {shopOpen && (
             <div className="absolute left-0 top-full pt-3 w-48">
               <div className="bg-singlet border border-ink/[0.08] shadow-lg">
+                <Link
+                  href="/collections"
+                  onClick={() => setShopOpen(false)}
+                  className="block px-4 py-3 text-sm text-ink hover:bg-bone"
+                >
+                  All gear →
+                </Link>
                 {categories.map((cat) => (
                   <Link
                     key={cat.slug}
                     href={`/collections/${cat.slug}`}
+                    onClick={() => setShopOpen(false)}
                     className="block px-4 py-3 text-[13px] uppercase tracking-[0.05em] text-ink hover:bg-bone hover:text-red transition-colors"
                   >
                     {cat.name}
@@ -65,7 +85,7 @@ export default function Nav() {
         </div>
 
         <a
-          href="#manifesto"
+          href="/#manifesto"
           className={`text-[13px] tracking-[0.05em] uppercase transition-colors duration-300 hover:text-red ${linkColor}`}
         >
           Manifesto
@@ -122,6 +142,14 @@ export default function Nav() {
           </svg>
         </button>
       </div>
+      <button
+        className={`md:hidden text-[22px] transition-colors duration-300 ${linkColor}`}
+        onClick={() => setMobileOpen((v) => !v)}
+        aria-expanded={mobileOpen}
+        aria-label="Toggle menu"
+      >
+        &#9776;
+      </button>
 
       {/* Mobile menu */}
       {mobileOpen && (
@@ -133,6 +161,13 @@ export default function Nav() {
             >
               Shop <span>{shopOpen ? "\u2212" : "+"}</span>
             </button>
+            <Link
+              href="/collections"
+              onClick={() => setMobileOpen(false)}
+              className="py-2 text-sm text-ink"
+            >
+              All gear →
+            </Link>
             {shopOpen &&
               categories.map((cat) => (
                 <Link
@@ -145,7 +180,7 @@ export default function Nav() {
                 </Link>
               ))}
             <a
-              href="#manifesto"
+              href="/#manifesto"
               onClick={() => setMobileOpen(false)}
               className="py-2 text-[13px] tracking-[0.05em] uppercase text-ink"
             >

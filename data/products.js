@@ -353,3 +353,10 @@ export const products = [
     description: "Heavyweight cotton, healthy scepticism.",
   },
 ];
+export {
+  categories,
+  products,
+  colours,
+  getProduct,
+  formatMoney,
+} from "./catalogue.mjs";
