@@ -1,124 +1,206 @@
+// Approved six-product catalogue; the other collections have no products yet.
 export const categories = [
   {
-    slug: "mens",
-    name: "Men’s",
-    description: "Shed sessions. Pie runs. Front-row noise.",
+    "slug": "petrolheads",
+    "name": "Blokes",
+    "description": "Six originals. No filler."
   },
   {
-    slug: "womens",
-    name: "Women’s",
-    description: "Your ute. Your playlist. Your rules.",
+    "slug": "rock-dogs",
+    "name": "Chicks",
+    "description": "Coming soon."
   },
   {
-    slug: "kids",
-    name: "Kids’",
-    description: "Small legends. Considerable volume.",
-  },
+    "slug": "sheilas",
+    "name": "Rug rats",
+    "description": "Coming soon."
+  }
 ];
-const designs = {
-  mens: [
-    "Shed Department",
-    "Pie Run Social Club",
-    "Jandals All Year",
-    "Local Legend",
-    "Garage Radio",
-    "Chur Bro",
-    "Ute Weekend",
-    "Backyard Headliner",
-    "Mince & Cheese",
-    "Still in the Shed",
-    "She’ll Be Right",
-    "Cold Start Club",
-    "After Hours Garage",
-    "Road Trip Regular",
-    "Bogan Original",
-  ],
-  womens: [
-    "Shed Queen",
-    "Own the Ute",
-    "Gumboot Social Club",
-    "Yeah Nah",
-    "Front Row Regular",
-    "Sweet As",
-    "Pie Run Passenger",
-    "Bach Weekend",
-    "Loud & Local",
-    "No Sunday Best",
-    "Hard Out",
-    "Off the Clock",
-    "Garage Girl",
-    "West Coast Weekend",
-    "Bogan Original",
-  ],
-  kids: [
-    "Little Legend",
-    "Junior Shed Crew",
-    "Mini Roadie",
-    "Gumboot Gang",
-    "Snack Run",
-    "Little Chur",
-    "Backyard Explorer",
-    "Tiny Headliner",
-    "Co-Pilot",
-    "Muddy Weekend",
-    "Small but Loud",
-    "Early Start Club",
-    "Junior Garage",
-    "Bach Kid",
-    "Bogan Original",
-  ],
-};
-export const colours = {
-  Bitumen: "#242422",
-  Bone: "#e6dfce",
-  "Washed red": "#89483e",
-};
-const slugify = (text) =>
-  text
-    .toLowerCase()
-    .replace(/[’']/g, "")
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-export const products = categories.flatMap((category, categoryIndex) =>
-  designs[category.slug].map((design, i) => {
-    const type = i < 10 ? "t-shirt" : "hoodie";
-    const isKid = category.slug === "kids";
-    const id = categoryIndex * 15 + i + 1;
-    return {
-      id,
-      slug: `${category.slug}-${slugify(design)}-${type}`,
-      category: category.slug,
-      type,
-      design,
-      name: `${design} ${type === "t-shirt" ? "T-shirt" : "Hoodie"}`,
-      price: isKid
-        ? type === "t-shirt"
-          ? 29
-          : 59
-        : type === "t-shirt"
-          ? 45
-          : 89,
-      sku: `BSC-${category.slug.toUpperCase()}-${String(i + 1).padStart(2, "0")}`,
-      sizes: isKid
-        ? ["2", "4", "6", "8", "10", "12", "14"]
-        : category.slug === "womens"
-          ? ["XS", "S", "M", "L", "XL", "2XL"]
-          : ["S", "M", "L", "XL", "2XL", "3XL"],
-      colours: ["Bitumen", "Bone", "Washed red"],
-      description: `${design}. ${isKid ? "For the next generation of Kiwi legends." : "For a very New Zealand kind of weekend."}`,
-      details:
-        type === "t-shirt"
-          ? "Proposed regular-fit cotton tee with a crew neck and original front print."
-          : "Proposed relaxed-fit fleece hoodie with a front pouch and original chest print.",
-      featured: i === 0 || i === 10,
-      printStyle: i % 3,
-    };
-  }),
-);
-export const formatMoney = (value) =>
-  new Intl.NumberFormat("en-NZ", { style: "currency", currency: "NZD" }).format(
-    value,
-  );
-export const getProduct = (slug) =>
-  products.find((product) => product.slug === slug);
+export const products = [
+  {
+    "id": 1201,
+    "sku": "BSC-1201",
+    "name": "Good Under Pressure",
+    "design": "Good Under Pressure",
+    "slug": "good-under-pressure",
+    "category": "petrolheads",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/blokes/good-under-pressure.webp",
+    "description": "Operating normally. Even when everything else isn't.",
+    "detailHeading": "OPERATING NORMALLY.",
+    "detailParagraphs": [
+      "Deadlines, disasters, things going sideways. Some people crack. Others barely move the needle.",
+      "A vintage pressure-gauge design for those who keep their cool when the heat is on. No panic. No drama. Just business as usual."
+    ],
+    "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1202,
+    "sku": "BSC-1202",
+    "name": "High Spec",
+    "design": "High Spec",
+    "slug": "high-spec",
+    "category": "petrolheads",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/blokes/high-spec.webp",
+    "description": "Field tested. Nothing to prove.",
+    "detailHeading": "FIELD TESTED. NOTHING TO PROVE.",
+    "detailParagraphs": [
+      "Some people need a certificate to prove they're capable. Others just get on with it.",
+      "A vintage industrial badge for those who know their worth, know their way around a problem, and don't feel the need to advertise either."
+    ],
+    "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1203,
+    "sku": "BSC-1203",
+    "name": "Cult Classic",
+    "design": "Cult Classic",
+    "slug": "cult-classic",
+    "category": "petrolheads",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/blokes/cult-classic.webp",
+    "description": "Not for everyone. Never was.",
+    "detailHeading": "NOT FOR EVERYONE. NEVER WAS.",
+    "detailParagraphs": [
+      "Never topped the charts. Never followed the crowd. Still has a loyal following.",
+      "For the originals, the outsiders and the ones who've only got better with age.",
+      "Understated vintage lettering with a quiet nod to legendary status. Some things don't need mainstream approval."
+    ],
+    "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1204,
+    "sku": "BSC-1204",
+    "name": "Shed Certified",
+    "design": "Shed Certified",
+    "slug": "shed-certified",
+    "category": "petrolheads",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/blokes/shed-certified.webp",
+    "description": "No qualifications. Highly qualified.",
+    "detailHeading": "EXPERIENCE. COMMON SENSE. GETS IT DONE.",
+    "detailParagraphs": [
+      "No fancy certificates. No letters after the name. Just years of figuring things out, usually with the wrong tool and a fair bit of colourful language.",
+      "Featuring a vintage bench vice and workshop approval stamp, this one's for the practical thinkers, problem solvers and self-taught experts who know there's more than one way to get the job done."
+    ],
+    "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1205,
+    "sku": "BSC-1205",
+    "name": "Headliner",
+    "design": "Headliner",
+    "slug": "headliner",
+    "category": "petrolheads",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/blokes/headliner.webp",
+    "description": "Never the support act & always main stage.",
+    "detailHeading": "SOME PEOPLE ARE BORN FOR THE MAIN STAGE.",
+    "detailParagraphs": [
+      "No audition. No warm-up act. No waiting for someone to hand over the spotlight.",
+      "For those who live life at full volume, make their own entrance and have never been particularly comfortable in the background.",
+      "Bold vintage concert-poster lettering. Rock 'n' roll attitude. Top billing, naturally."
+    ],
+    "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1206,
+    "sku": "BSC-1206",
+    "name": "Full Noise Department",
+    "design": "Full Noise Department",
+    "slug": "full-noise-department",
+    "category": "petrolheads",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/blokes/full-noise-department.webp",
+    "description": "Set to nine. Still being polite.",
+    "detailHeading": "SET TO NINE. STILL BEING POLITE.",
+    "detailParagraphs": [
+      "There's a time and place for restraint. The opening riff of a good song isn't one of them.",
+      "A nod to vintage amplifiers, good taste in music and the belief that some things are simply better turned up.",
+      "One notch left. Use it wisely."
+    ],
+    "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  }
+];
+export const colours = { Bitumen: "#242422" };
+export const formatMoney = (value) => new Intl.NumberFormat("en-NZ", {style:"currency",currency:"NZD"}).format(value);
+export const getProduct = slug => products.find(p=>p.slug===slug);
