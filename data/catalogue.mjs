@@ -71,8 +71,8 @@ export const products = [
     "description": "Field tested. Nothing to prove.",
     "detailHeading": "FIELD TESTED. NOTHING TO PROVE.",
     "detailParagraphs": [
-      "High standards. Low tolerance for bullshit. No need for a certificate on the wall.",
-      "A vintage engineering-plate design for the bloke who's been put through his paces and still meets spec. No upgrades required."
+      "Some people need a certificate to prove they're capable. Others just get on with it.",
+      "A vintage industrial badge for those who know their worth, know their way around a problem, and don't feel the need to advertise either."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
