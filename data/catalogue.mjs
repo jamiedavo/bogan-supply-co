@@ -130,10 +130,10 @@ export const products = [
     ],
     "image": "/products/blokes/shed-certified.webp",
     "description": "No qualifications. Highly qualified.",
-    "detailHeading": "NO QUALIFICATIONS. HIGHLY QUALIFIED.",
+    "detailHeading": "EXPERIENCE. COMMON SENSE. GETS IT DONE.",
     "detailParagraphs": [
-      "Some qualifications come framed. Others come from years of figuring it out in the shed.",
-      "An old-school workshop certification design for the ones who can fix, build and make do without making a song and dance about it. Practically approved."
+      "No fancy certificates. No letters after the name. Just years of figuring things out, usually with the wrong tool and a fair bit of colourful language.",
+      "Featuring a vintage bench vice and workshop approval stamp, this one's for the practical thinkers, problem solvers and self-taught experts who know there's more than one way to get the job done."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
