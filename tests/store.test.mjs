@@ -7,27 +7,18 @@ import {
   safeCheckoutUrl,
   isStorefrontOrigin,
 } from "../lib/checkout.mjs";
-test("every range contains exactly 10 tees and 5 hoodies with unique identifiers", () => {
-  assert.equal(products.length, 45);
-  assert.equal(new Set(products.map((p) => p.slug)).size, 45);
-  assert.equal(new Set(products.map((p) => p.sku)).size, 45);
-  for (const c of categories) {
-    assert.equal(
-      products.filter((p) => p.category === c.slug && p.type === "t-shirt")
-        .length,
-      10,
-    );
-    assert.equal(
-      products.filter((p) => p.category === c.slug && p.type === "hoodie")
-        .length,
-      5,
-    );
-  }
+test("the Blokes range has exactly the six approved tees and no old placeholders", () => {
+  assert.equal(products.length, 6);
+  assert.equal(new Set(products.map((p) => p.slug)).size, 6);
+  assert.equal(new Set(products.map((p) => p.sku)).size, 6);
+  assert.ok(products.every((p) => p.category === "petrolheads" && p.type === "t-shirt" && p.price === 69));
+  assert.ok(products.every((p) => p.description && p.detailParagraphs.length && p.image));
+  assert.equal(products.filter((p) => p.category !== "petrolheads").length, 0);
 });
 test("cart separates variants, consolidates duplicates, caps quantity and ignores stored prices", () => {
   const p = products[0];
   const a = makeLine(p.slug, "M", "Bitumen", 7);
-  const b = makeLine(p.slug, "L", "Bone", 2);
+  const b = makeLine(p.slug, "L", "Bitumen", 2);
   const cart = restoreCart([{ ...a, price: 0.01 }, a, b]);
   assert.equal(cart.length, 2);
   assert.equal(cart[0].qty, 10);
