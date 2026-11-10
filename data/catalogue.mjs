@@ -379,18 +379,21 @@ export const products = [
     "colours": [
       "Bitumen"
     ],
-    "image": "/products/chicks/early-night-postponed-front.webp",
+    "image": "/products/chicks/early-night-postponed-back.webp",
     "images": [
       {
-        "src": "/products/chicks/early-night-postponed-front.webp",
-        "alt": "Early Night Postponed BOGAN T-shirt front mockup"
+        "src": "/products/chicks/early-night-postponed-back.webp",
+        "label": "Back",
+        "alt": "Early Night Postponed black tee back mockup, with concert-poster lettering and a microphone graphic"
       },
       {
-        "src": "/products/chicks/early-night-postponed-back.webp",
-        "alt": "Early Night Postponed BOGAN T-shirt back mockup"
+        "src": "/products/chicks/early-night-postponed-front.webp",
+        "label": "Front",
+        "alt": "Early Night Postponed black tee front mockup, with a small BOGAN PRESENTS chest print"
       }
     ],
     "description": "You had plans. Better ones came along.",
+    "shortDescription": "Concert-poster artwork on the back. Small BOGAN PRESENTS print on the front.",
     "detailHeading": "YOU HAD PLANS. BETTER ONES CAME ALONG.",
     "detailParagraphs": [
       "You had every intention of making it an early one. Then the music got better, the stories got longer and someone suggested just one more.",
