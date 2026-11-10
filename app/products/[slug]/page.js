@@ -22,7 +22,7 @@ export default async function ProductPage({ params }) {
   const category = categories.find((c) => c.slug === product.category);
   return (
     <>
-      <main className="page-shell pt-[104px] md:pt-[140px]">
+      <main id="main-content" tabIndex={-1} className="page-shell pt-[104px] md:pt-[140px]">
         <nav
           aria-label="Breadcrumb"
           className="font-mono text-xs mb-6 md:mb-8 flex gap-3 flex-wrap"

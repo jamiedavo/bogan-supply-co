@@ -11,7 +11,7 @@ export default async function CollectionPage({params}){
   const {category}=await params;const c=categories.find(c=>c.slug===category);
   if(!c) notFound();
   const count=products.filter(p=>p.category===category).length;
-  return <><main className="page-shell">
+  return <><main id="main-content" tabIndex={-1} className="page-shell">
     <p className="eyebrow">{count} {count===1?"tee":"tees"} / BOGAN SUPPLY CO.</p>
     <h1 className="page-title">{c.name} GEAR</h1>
     <p className="mb-10 text-ink/65">{c.description}</p>

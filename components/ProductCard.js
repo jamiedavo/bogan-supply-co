@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { categories, formatMoney } from "@/data/products";
-export default function ProductCard({ product, index = 0 }) {
+export default function ProductCard({ product, index = 0, headingLevel = 3 }) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   const imageAlt = product.images?.find(image => image.src === product.image)?.alt
     || `${product.name} BOGAN tee on model`;
   return (
@@ -15,9 +16,9 @@ export default function ProductCard({ product, index = 0 }) {
       </Link>
       <div className="p-[22px] flex flex-col flex-1">
         <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">BOGAN / {categories.find(c => c.slug === product.category)?.name} / T-shirt</p>
-        <h3 className="text-[17px] font-semibold mb-2">
+        <Heading className="text-[17px] font-semibold mb-2">
           <Link href={`/products/${product.slug}`} className="hover:text-red">{product.name}</Link>
-        </h3>
+        </Heading>
         <p className="text-[13px] text-ink/65 leading-relaxed mb-5">{product.description}</p>
         <div className="mt-auto flex items-center justify-between gap-2">
           <span className="font-mono text-sm">{formatMoney(product.price)} <span className="text-[10px]">NZD</span></span>
