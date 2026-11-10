@@ -1,21 +1,25 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { formatMoney } from "@/data/products";
+import { categories, formatMoney } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 export default function ProductDetails({ product }) {
   const [size, setSize] = useState("");
   const [qty, setQty] = useState(1);
   const [message, setMessage] = useState("");
   const { addToCart, hydrated } = useCart();
+  const [imageIndex, setImageIndex] = useState(0);
+  const images = product.images || [{src: product.image, alt: `${product.name} BOGAN T-shirt mockup`}];
+  const category = categories.find(c => c.slug === product.category);
   return (
     <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
       <div className="bg-bone overflow-hidden">
-        <img className="w-full h-auto object-cover" src={product.image}
-          alt={`${product.name} black BOGAN T-shirt model photograph`} />
+        <img className="w-full h-auto object-cover" src={images[imageIndex].src}
+          alt={images[imageIndex].alt} />
+        {images.length > 1 && <div className="flex gap-3 p-4">{images.map((image, i) => <button key={image.src} type="button" aria-pressed={i === imageIndex} onClick={() => setImageIndex(i)} className={`filter-pill ${i === imageIndex ? "active" : ""}`}>{image.src.includes("-back.webp") ? "Back" : "Front"}</button>)}</div>}
       </div>
       <div className="py-4">
-        <p className="eyebrow">Blokes / T-shirt / {product.sku}</p>
+        <p className="eyebrow">{category?.name} / T-shirt / {product.sku}</p>
         <h1 className="font-display text-4xl lg:text-5xl uppercase leading-tight mb-4">{product.name}</h1>
         <p className="font-mono text-xl mb-6">{formatMoney(product.price)} <span className="text-xs text-ink/60">NZD</span></p>
         <p className="text-lg font-semibold uppercase leading-snug mb-5">{product.detailHeading}</p>

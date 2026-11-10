@@ -1,5 +1,7 @@
 import test from "node:test";
+import nextConfig from "../next.config.js";
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { products, categories } from "../data/catalogue.mjs";
 import { makeLine, restoreCart, shippingEstimate } from "../lib/cart.mjs";
 import {
@@ -7,14 +9,29 @@ import {
   safeCheckoutUrl,
   isStorefrontOrigin,
 } from "../lib/checkout.mjs";
-test("the Blokes range has exactly the six approved tees and no old placeholders", () => {
-  assert.equal(products.length, 6);
-  assert.equal(new Set(products.map((p) => p.slug)).size, 6);
-  assert.equal(new Set(products.map((p) => p.sku)).size, 6);
-  assert.ok(products.every((p) => p.category === "petrolheads" && p.type === "t-shirt" && p.price === 69));
-  assert.ok(products.every((p) => p.description && p.detailParagraphs.length && p.image));
-  assert.equal(products.filter((p) => p.category !== "petrolheads").length, 0);
+test("Blokes and Chicks have six complete tees each with available mockups", () => {
+  assert.equal(products.length, 12);
+  assert.equal(new Set(products.map(p => p.slug)).size, 12);
+  assert.equal(new Set(products.map(p => p.sku)).size, 12);
+  for (const category of ["petrolheads", "rock-dogs"]) {
+    assert.equal(products.filter(p => p.category === category).length, 6);
+  }
+  assert.equal(products.filter(p => p.category === "sheilas").length, 0);
+  for (const p of products) {
+    assert.equal(p.price, 69);
+    assert.equal(p.type, "t-shirt");
+    assert.ok(p.description && p.detailHeading && p.detailParagraphs.length);
+    for (const image of p.images || [{src: p.image}]) {
+      assert.ok(existsSync(new URL(`../public${image.src}`, import.meta.url)), image.src);
+    }
+    assert.ok(makeLine(p.slug, "M", "Bitumen"));
+  }
+  const earlyNight = products.find(p => p.id === 1306);
+  assert.equal(earlyNight.images.length, 2);
+  assert.ok(earlyNight.images.some(image => image.src.endsWith("-front.webp")));
+  assert.ok(earlyNight.images.some(image => image.src.endsWith("-back.webp")));
 });
+
 test("cart separates variants, consolidates duplicates, caps quantity and ignores stored prices", () => {
   const p = products[0];
   const a = makeLine(p.slug, "M", "Bitumen", 7);
@@ -99,4 +116,11 @@ test("same-origin checkout works with local hostnames and rejects cross-site req
     ),
     false,
   );
+});
+
+ test("current collection URLs are never redirected away from their ranges", async () => {
+  const redirects = await nextConfig.redirects();
+  for (const category of categories) {
+    assert.ok(!redirects.some(rule => rule.source === `/collections/${category.slug}`));
+  }
 });

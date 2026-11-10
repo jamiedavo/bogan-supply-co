@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatMoney } from "@/data/products";
+import { categories, formatMoney } from "@/data/products";
 export default function ProductCard({ product, index = 0 }) {
   return (
     <article className="bg-singlet flex flex-col">
@@ -12,7 +12,7 @@ export default function ProductCard({ product, index = 0 }) {
         </span>
       </Link>
       <div className="p-[22px] flex flex-col flex-1">
-        <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">BOGAN / Blokes / T-shirt</p>
+        <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">BOGAN / {categories.find(c => c.slug === product.category)?.name} / T-shirt</p>
         <h3 className="text-[17px] font-semibold mb-2">
           <Link href={`/products/${product.slug}`} className="hover:text-red">{product.name}</Link>
         </h3>
