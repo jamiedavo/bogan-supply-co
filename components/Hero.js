@@ -34,7 +34,7 @@ export default function Hero() {
       </h1>
 
       <p className="max-w-[480px] text-base leading-[1.6] text-bone-deep mt-6 mb-10">
-        Six original tees for Kiwi legends. First up: the Blokes collection.
+        Original tees for Kiwi legends. Meet the Blokes and Chicks collections.
       </p>
 
       <div className="flex items-center gap-7 flex-wrap">

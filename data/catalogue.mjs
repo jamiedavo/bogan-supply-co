@@ -1,4 +1,4 @@
-// Approved six-product catalogue; the other collections have no products yet.
+// Blokes and Chicks collections; Rug rats is coming soon.
 export const categories = [
   {
     "slug": "petrolheads",
@@ -8,7 +8,7 @@ export const categories = [
   {
     "slug": "rock-dogs",
     "name": "Chicks",
-    "description": "Coming soon."
+    "description": "Six originals. No half measures."
   },
   {
     "slug": "sheilas",
@@ -198,6 +198,206 @@ export const products = [
       "One notch left. Use it wisely."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1301,
+    "sku": "BSC-1301",
+    "name": "Rock God",
+    "design": "Rock God",
+    "slug": "rock-god",
+    "category": "rock-dogs",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/chicks/rock-god.webp",
+    "description": "Your taste in music is legendary. Your modesty, less so.",
+    "detailHeading": "LEGENDARY STATUS. SELF-APPOINTED.",
+    "detailParagraphs": [
+      "You know the riffs, you've got strong opinions about the setlist, and you've never needed a microphone to command attention.",
+      "On stage, front row or singing badly in the car, you're not letting anyone else have all the glory.",
+      "Talent appreciated. Attitude essential."
+    ],
+    "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1302,
+    "sku": "BSC-1302",
+    "name": "Fancy As Fuck",
+    "design": "Fancy As Fuck",
+    "slug": "fancy-as-fuck",
+    "category": "rock-dogs",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/chicks/fancy-as-fuck.webp",
+    "description": "All class. No compromises.",
+    "detailHeading": "ALL CLASS. NO COMPROMISES.",
+    "detailParagraphs": [
+      "You love a bit of glamour, you've got an eye for the finer things and you know how to make an entrance.",
+      "But looking fabulous doesn't mean putting on airs. You can appreciate the champagne and still prefer a cold beer, dress to impress and laugh until you snort.",
+      "You don't have to choose between being fancy and being yourself.",
+      "You're both. Unapologetically."
+    ],
+    "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1303,
+    "sku": "BSC-1303",
+    "name": "A Bit Much",
+    "design": "A Bit Much",
+    "slug": "a-bit-much",
+    "category": "rock-dogs",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/chicks/a-bit-much.webp",
+    "description": "You've never been one for half measures.",
+    "detailHeading": "YOU'VE NEVER BEEN ONE FOR HALF MEASURES.",
+    "detailParagraphs": [
+      "You laugh loud, love hard, speak your mind and throw yourself into whatever makes life worth living.",
+      "You bring a little extra to everything. A bit more colour, a bit more character and occasionally a bit more chaos.",
+      "Could you do things by halves? Sure.",
+      "But where's the fun in that?"
+    ],
+    "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1304,
+    "sku": "BSC-1304",
+    "name": "Hardy Perennial",
+    "design": "Hardy Perennial",
+    "slug": "hardy-perennial",
+    "category": "rock-dogs",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/chicks/hardy-perennial.webp",
+    "description": "Still got it. Always did.",
+    "detailHeading": "STILL GOT IT. ALWAYS DID.",
+    "detailParagraphs": [
+      "You've had time to develop excellent taste, strong opinions and a healthy disregard for unsolicited advice.",
+      "You know what you like, you've got your own style and you still find plenty of reasons to laugh, get dressed up and get into a little mischief.",
+      "You're not trying to be twenty again. You're having a bloody good time being exactly who you are.",
+      "And there's plenty more where that came from."
+    ],
+    "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1305,
+    "sku": "BSC-1305",
+    "name": "All Over The Shop",
+    "design": "All Over The Shop",
+    "slug": "all-over-the-shop",
+    "category": "rock-dogs",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/chicks/all-over-the-shop.webp",
+    "description": "One thing at a time? Where's the fun in that?",
+    "detailHeading": "ONE THING AT A TIME? WHERE'S THE FUN IN THAT?",
+    "detailParagraphs": [
+      "You've got ideas brewing, plans changing and usually about five things happening at once.",
+      "You love getting stuck in, trying something new and seeing where the day takes you. Sometimes things get a little messy, but that's half the fun.",
+      "You've got plenty of interests, plenty of energy and absolutely no desire to live life in a straight line.",
+      "A little all over the shop? Happily."
+    ],
+    "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
+    "featured": true
+  },
+  {
+    "id": 1306,
+    "sku": "BSC-1306",
+    "name": "Early Night Postponed",
+    "design": "Early Night Postponed",
+    "slug": "early-night-postponed",
+    "category": "rock-dogs",
+    "type": "t-shirt",
+    "price": 69,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "colours": [
+      "Bitumen"
+    ],
+    "image": "/products/chicks/early-night-postponed-front.webp",
+    "images": [
+      {
+        "src": "/products/chicks/early-night-postponed-front.webp",
+        "alt": "Early Night Postponed BOGAN T-shirt front mockup"
+      },
+      {
+        "src": "/products/chicks/early-night-postponed-back.webp",
+        "alt": "Early Night Postponed BOGAN T-shirt back mockup"
+      }
+    ],
+    "description": "You had plans. Better ones came along.",
+    "detailHeading": "YOU HAD PLANS. BETTER ONES CAME ALONG.",
+    "detailParagraphs": [
+      "You had every intention of making it an early one. Then the music got better, the stories got longer and someone suggested just one more.",
+      "You know there's nothing wrong with a quiet night in. But good company, great music and a night worth remembering don't always come with a timetable.",
+      "Bedtime can wait."
+    ],
+    "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
   }
 ];

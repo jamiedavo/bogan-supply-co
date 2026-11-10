@@ -3,21 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      {
-        source: "/collections/petrolheads",
-        destination: "/collections/mens",
-        permanent: true,
-      },
-      {
-        source: "/collections/rock-dogs",
-        destination: "/collections",
-        permanent: true,
-      },
-      {
-        source: "/collections/sheilas",
-        destination: "/collections/womens",
-        permanent: true,
-      },
+      { source: "/collections/mens", destination: "/collections/petrolheads", permanent: true },
+      { source: "/collections/womens", destination: "/collections/rock-dogs", permanent: true },
+      { source: "/collections/kids", destination: "/collections/sheilas", permanent: true },
     ];
   },
 };
