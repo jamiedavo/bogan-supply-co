@@ -4,7 +4,7 @@ export const metadata = { title: "The Details — Bogan Supply Co." };
 export default function Help() {
   return (
     <>
-      <main className="page-shell max-w-[850px]">
+      <main id="main-content" tabIndex={-1} className="page-shell max-w-[850px]">
         <p className="eyebrow">The small print / plain English</p>
         <h1 className="page-title">THE DETAILS.</h1>
         <p className="mb-12 leading-relaxed">

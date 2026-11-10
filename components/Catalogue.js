@@ -10,10 +10,10 @@ export default function Catalogue({category="all"}){
  const items=base.filter(p=>`${p.name} ${p.description}`.toLowerCase().includes(query.toLowerCase().trim()));
  items.sort((a,b)=>sort==="price-low"?a.price-b.price:sort==="price-high"?b.price-a.price:sort==="name"?a.name.localeCompare(b.name):Number(b.featured)-Number(a.featured)||a.id-b.id);
  return <>
-   <div className="flex flex-wrap gap-2 mb-8" aria-label="Shop by range">
-    <Link className={`filter-pill ${category==="all"?"active":""}`} href="/collections">All gear</Link>
-    {categories.map(c=><Link key={c.slug} className={`filter-pill ${category===c.slug?"active":""}`} href={`/collections/${c.slug}`}>{c.name}</Link>)}
-   </div>
+   <nav className="flex flex-wrap gap-2 mb-8" aria-label="Shop by range">
+    <Link className={`filter-pill ${category==="all"?"active":""}`} aria-current={category==="all"?"page":undefined} href="/collections">All gear</Link>
+    {categories.map(c=><Link key={c.slug} className={`filter-pill ${category===c.slug?"active":""}`} aria-current={category===c.slug?"page":undefined} href={`/collections/${c.slug}`}>{c.name}</Link>)}
+   </nav>
    {base.length>0&&<div className="grid sm:grid-cols-2 gap-4 border-y border-ink/15 py-5 mb-6">
     <label className="field-label">Find your gear<input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Try pressure, cult, noise…" className="field"/></label>
     <label className="field-label">Sort by<select className="field" value={sort} onChange={e=>setSort(e.target.value)}>
@@ -22,7 +22,7 @@ export default function Catalogue({category="all"}){
     </select></label>
    </div>}
    <p className="font-mono text-xs mb-6" role="status">{items.length} {items.length===1?"tee":"tees"} / NZD</p>
-   {items.length?<ProductGrid items={items}/>:<div className="border border-ink/20 p-10 text-center">
+   {items.length?<ProductGrid items={items} headingLevel={2}/>:<div className="border border-ink/20 p-10 text-center">
     <p>{base.length?"No tees match that search.":"This range is coming soon."}</p>
     {base.length>0&&<button className="mt-4 underline" onClick={()=>setQuery("")}>Clear search</button>}
    </div>}

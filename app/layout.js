@@ -28,10 +28,13 @@ export default function RootLayout({ children }) {
             Skip to content
           </a>
           <Nav />
-          <div className="fixed bottom-0 left-0 z-40 bg-ink text-bone px-3 py-1.5 text-[10px] font-mono tracking-wider">
+          <aside
+            aria-label="Store preview notice"
+            className="fixed bottom-0 left-0 z-40 bg-ink text-bone px-3 py-1.5 text-[10px] font-mono tracking-wider"
+          >
             STORE PREVIEW / CONCEPT RANGE
-          </div>
-          <div id="main-content">{children}</div>
+          </aside>
+          {children}
           <CartDrawer />
         </CartProvider>
       </body>

@@ -39,10 +39,10 @@ export const products = [
     ],
     "image": "/products/blokes/good-under-pressure.webp",
     "description": "Operating normally. Even when everything else isn't.",
+    "shortDescription": "A pressure gauge and OPERATING NORMALLY, printed beneath GOOD UNDER PRESSURE.",
     "detailHeading": "OPERATING NORMALLY.",
     "detailParagraphs": [
-      "Deadlines, disasters, things going sideways. Some people crack. Others barely move the needle.",
-      "A vintage pressure-gauge design for those who keep their cool when the heat is on. No panic. No drama. Just business as usual."
+      "The round pressure gauge sits below GOOD UNDER PRESSURE, with OPERATING NORMALLY in the small print. The needle has found its normal range. Your inbox can make its own arrangements."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -69,10 +69,10 @@ export const products = [
     ],
     "image": "/products/blokes/high-spec.webp",
     "description": "Field tested. Nothing to prove.",
+    "shortDescription": "An industrial badge with corner fasteners, ruler marks and FIELD TESTED lettering.",
     "detailHeading": "FIELD TESTED. NOTHING TO PROVE.",
     "detailParagraphs": [
-      "Some people need a certificate to prove they're capable. Others just get on with it.",
-      "A vintage industrial badge for those who know their worth, know their way around a problem, and don't feel the need to advertise either."
+      "HIGH SPEC sits inside an industrial badge, complete with corner fasteners and ruler marks. FIELD TESTED and NOTHING TO PROVE are written into the design. You can leave the clipboard at home."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -98,12 +98,11 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/blokes/cult-classic.webp",
-    "description": "Not for everyone. Never was.",
-    "detailHeading": "NOT FOR EVERYONE. NEVER WAS.",
+    "description": "Still in rotation.",
+    "shortDescription": "A small oval badge with CULT CLASSIC in vintage lettering on the front.",
+    "detailHeading": "STILL IN ROTATION.",
     "detailParagraphs": [
-      "Never topped the charts. Never followed the crowd. Still has a loyal following.",
-      "For the originals, the outsiders and the ones who've only got better with age.",
-      "Understated vintage lettering with a quiet nod to legendary status. Some things don't need mainstream approval."
+      "CULT CLASSIC sits inside a small oval badge, with vintage lettering and the fine print tucked underneath. A favourite back in rotation. No need to wait for the anniversary reissue."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -129,11 +128,11 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/blokes/shed-certified.webp",
-    "description": "No qualifications. Highly qualified.",
+    "description": "The vice has signed it off.",
+    "shortDescription": "A bench vice, spanner and workshop checklist, finished with an APPROVED stamp.",
     "detailHeading": "EXPERIENCE. COMMON SENSE. GETS IT DONE.",
     "detailParagraphs": [
-      "No fancy certificates. No letters after the name. Just years of figuring things out, usually with the wrong tool and a fair bit of colourful language.",
-      "Featuring a vintage bench vice and workshop approval stamp, this one's for the practical thinkers, problem solvers and self-taught experts who know there's more than one way to get the job done."
+      "A bench vice and spanner sit above a checklist: EXPERIENCE. COMMON SENSE. GETS IT DONE. There's an APPROVED stamp to finish the job. The shed's paperwork is in order."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -159,12 +158,11 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/blokes/headliner.webp",
-    "description": "Never the support act & always main stage.",
-    "detailHeading": "SOME PEOPLE ARE BORN FOR THE MAIN STAGE.",
+    "description": "Top billing. Spare room.",
+    "shortDescription": "BOGAN in the small type, HEADLINER across the front in concert lettering.",
+    "detailHeading": "TOP BILLING. SPARE ROOM.",
     "detailParagraphs": [
-      "No audition. No warm-up act. No waiting for someone to hand over the spotlight.",
-      "For those who live life at full volume, make their own entrance and have never been particularly comfortable in the background.",
-      "Bold vintage concert-poster lettering. Rock 'n' roll attitude. Top billing, naturally."
+      "BOGAN in the small type, HEADLINER across the chest. Concert lettering gives the title plenty of room. You can take top billing even if tonight's venue is the spare room."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -190,12 +188,11 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/blokes/full-noise-department.webp",
-    "description": "Set to nine. Still being polite.",
-    "detailHeading": "SET TO NINE. STILL BEING POLITE.",
+    "description": "Set to ten. Still being polite.",
+    "shortDescription": "A vintage amp dial with a red marker and a numbered scale.",
+    "detailHeading": "SET TO TEN. STILL BEING POLITE.",
     "detailParagraphs": [
-      "There's a time and place for restraint. The opening riff of a good song isn't one of them.",
-      "A nod to vintage amplifiers, good taste in music and the belief that some things are simply better turned up.",
-      "One notch left. Use it wisely."
+      "A vintage amp dial sits between FULL NOISE and DEPARTMENT, with a red marker and a numbered scale. All volume enquiries are being handled by the opening riff."
     ],
     "details": "Heavyweight black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -221,12 +218,11 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/chicks/rock-god.webp",
-    "description": "Your taste in music is legendary. Your modesty, less so.",
+    "description": "The encore's in the car.",
+    "shortDescription": "ROCK GOD in large cream lettering across the front of a black tee.",
     "detailHeading": "LEGENDARY STATUS. SELF-APPOINTED.",
     "detailParagraphs": [
-      "You know the riffs, you've got strong opinions about the setlist, and you've never needed a microphone to command attention.",
-      "On stage, front row or singing badly in the car, you're not letting anyone else have all the glory.",
-      "Talent appreciated. Attitude essential."
+      "ROCK GOD gets the whole line, in large cream lettering across the front. You can give yourself the title. The encore can happen in the car on the way home."
     ],
     "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -252,13 +248,11 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/chicks/fancy-as-fuck.webp",
-    "description": "All class. No compromises.",
-    "detailHeading": "ALL CLASS. NO COMPROMISES.",
+    "description": "You said dress up. I did.",
+    "shortDescription": "FANCY AS FUCK in ornate cream lettering, with a red flourish underneath.",
+    "detailHeading": "DRESSED FOR THE OCCASION.",
     "detailParagraphs": [
-      "You love a bit of glamour, you've got an eye for the finer things and you know how to make an entrance.",
-      "But looking fabulous doesn't mean putting on airs. You can appreciate the champagne and still prefer a cold beer, dress to impress and laugh until you snort.",
-      "You don't have to choose between being fancy and being yourself.",
-      "You're both. Unapologetically."
+      "FANCY AS FUCK is set in ornate cream lettering with a red flourish underneath. The words have dressed for the occasion. You can leave them to handle the introductions."
     ],
     "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -284,13 +278,11 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/chicks/a-bit-much.webp",
-    "description": "You've never been one for half measures.",
-    "detailHeading": "YOU'VE NEVER BEEN ONE FOR HALF MEASURES.",
+    "description": "MUCH gets most of the room.",
+    "shortDescription": "A BIT above a much larger MUCH, finished with a red full stop.",
+    "detailHeading": "MUCH GETS MOST OF THE ROOM.",
     "detailParagraphs": [
-      "You laugh loud, love hard, speak your mind and throw yourself into whatever makes life worth living.",
-      "You bring a little extra to everything. A bit more colour, a bit more character and occasionally a bit more chaos.",
-      "Could you do things by halves? Sure.",
-      "But where's the fun in that?"
+      "A BIT sits above a much larger MUCH. A red full stop finishes the print. Even the punctuation came prepared to make an entrance."
     ],
     "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -317,12 +309,10 @@ export const products = [
     ],
     "image": "/products/chicks/hardy-perennial.webp",
     "description": "Still got it. Always did.",
+    "shortDescription": "A botanical flower illustration, with HARDY PERENNIAL beneath it and a small red dot.",
     "detailHeading": "STILL GOT IT. ALWAYS DID.",
     "detailParagraphs": [
-      "You've had time to develop excellent taste, strong opinions and a healthy disregard for unsolicited advice.",
-      "You know what you like, you've got your own style and you still find plenty of reasons to laugh, get dressed up and get into a little mischief.",
-      "You're not trying to be twenty again. You're having a bloody good time being exactly who you are.",
-      "And there's plenty more where that came from."
+      "A flower drawn in the style of a botanical plate. HARDY PERENNIAL sits beneath it, above a small red dot. The garden has relaxed its dress code."
     ],
     "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -348,13 +338,11 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/chicks/all-over-the-shop.webp",
-    "description": "One thing at a time? Where's the fun in that?",
-    "detailHeading": "ONE THING AT A TIME? WHERE'S THE FUN IN THAT?",
+    "description": "The lettering had other plans.",
+    "shortDescription": "Slanted ALL OVER THE SHOP lettering, with brush marks and a sweeping underline.",
+    "detailHeading": "THE LETTERING HAD OTHER PLANS.",
     "detailParagraphs": [
-      "You've got ideas brewing, plans changing and usually about five things happening at once.",
-      "You love getting stuck in, trying something new and seeing where the day takes you. Sometimes things get a little messy, but that's half the fun.",
-      "You've got plenty of interests, plenty of energy and absolutely no desire to live life in a straight line.",
-      "A little all over the shop? Happily."
+      "ALL OVER THE SHOP runs across the front in slanted lettering, with brush marks and a sweeping underline. The words appear to have taken the scenic route."
     ],
     "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
@@ -396,9 +384,7 @@ export const products = [
     "shortDescription": "Concert-poster artwork on the back. Small BOGAN PRESENTS print on the front.",
     "detailHeading": "YOU HAD PLANS. BETTER ONES CAME ALONG.",
     "detailParagraphs": [
-      "You had every intention of making it an early one. Then the music got better, the stories got longer and someone suggested just one more.",
-      "You know there's nothing wrong with a quiet night in. But good company, great music and a night worth remembering don't always come with a timetable.",
-      "Bedtime can wait."
+      "BOGAN PRESENTS is printed small on the front. On the back: EARLY NIGHT POSTPONED, a microphone and concert-poster lettering. One very public change of plan."
     ],
     "details": "Black tee. Fit, fabric and sizing are subject to supplier confirmation.",
     "featured": true
