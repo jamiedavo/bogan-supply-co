@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { categories, formatMoney } from "@/data/products";
 export default function ProductCard({ product, index = 0 }) {
+  const imageAlt = product.images?.find(image => image.src === product.image)?.alt
+    || `${product.name} BOGAN tee on model`;
   return (
     <article className="bg-singlet flex flex-col">
       <Link href={`/products/${product.slug}`} aria-label={`View ${product.name}`}
         className={`relative aspect-[4/5] block overflow-hidden ${index % 2 ? "bg-bone-deep" : "bg-bone"}`}>
-        <img src={product.image} alt={`${product.name} BOGAN tee on model`} loading="lazy"
+        <img src={product.image} alt={imageAlt} loading="lazy"
           className="h-full w-full object-cover hover:scale-[1.025] transition-transform duration-300" />
         <span className="absolute top-3 right-3 bg-red text-singlet px-3 py-2 rotate-3 font-mono text-xs">
           {formatMoney(product.price)}

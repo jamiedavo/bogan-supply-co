@@ -22,10 +22,10 @@ export default async function ProductPage({ params }) {
   const category = categories.find((c) => c.slug === product.category);
   return (
     <>
-      <main className="page-shell">
+      <main className="page-shell pt-[104px] md:pt-[140px]">
         <nav
           aria-label="Breadcrumb"
-          className="font-mono text-xs mb-8 flex gap-3 flex-wrap"
+          className="font-mono text-xs mb-6 md:mb-8 flex gap-3 flex-wrap"
         >
           <Link href="/collections">All gear</Link>
           <span>/</span>
@@ -33,7 +33,7 @@ export default async function ProductPage({ params }) {
           <span>/</span>
           <span>{product.name}</span>
         </nav>
-        <ProductDetails product={product} />
+        <ProductDetails key={product.slug} product={product} />
         <section className="mt-20">
           <h2 className="font-display text-3xl uppercase mb-8">
             More from the crew

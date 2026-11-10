@@ -12,7 +12,12 @@ export default function HomePage(){
     <p className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.18em] text-steel mb-4">
       <span className="inline-block w-[18px] h-[2px] bg-red"/>The range
     </p>
-    <h2 className="font-sans font-semibold text-[clamp(26px,3.4vw,38px)] max-w-[560px]">THAT’S A BIT OF YOU.</h2>
+    <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
+     <h2 className="font-sans font-semibold text-[clamp(26px,3.4vw,38px)] max-w-[560px]">THAT’S A BIT OF YOU.</h2>
+     <Link href="/collections" className="inline-flex min-h-11 items-center gap-2 border-b border-ink text-sm font-semibold hover:text-red hover:border-red">
+      View all tees <span aria-hidden="true">→</span>
+     </Link>
+    </div>
    </div>
    <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-ink/[0.08] border border-ink/[0.08] mb-8">
     {openingProducts.map((product,index)=><ProductCard key={product.id} product={product} index={index}/>)}
