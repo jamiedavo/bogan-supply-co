@@ -188,9 +188,9 @@ export const products = [
       "Bitumen"
     ],
     "image": "/products/blokes/full-noise-department.webp",
-    "description": "Set to nine. Still being polite.",
+    "description": "Set to ten. Still being polite.",
     "shortDescription": "A vintage amp dial with a red marker and a numbered scale.",
-    "detailHeading": "SET TO NINE. STILL BEING POLITE.",
+    "detailHeading": "SET TO TEN. STILL BEING POLITE.",
     "detailParagraphs": [
       "A vintage amp dial sits between FULL NOISE and DEPARTMENT, with a red marker and a numbered scale. All volume enquiries are being handled by the opening riff."
     ],
